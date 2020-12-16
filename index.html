@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <title>恐怖のマンデータイマー</title>
+    <meta name="description" content="月曜日になるまでの残り時間を計測する恐るべきタイマー。">
+    <style type="text/css">
+        input { 
+            width: 180px;
+            color: #ff0000;
+            background-color: #000000;
+            border: 0px;
+            font-size: 150px;
+        }
+        p {
+            font-size: 36px;
+        }
+    </style>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body style="color:red; background-color:#000000; margin-left:40px">
+    <form name="clockForm">
+        <p style="font-size:36px; margin-top:50px;">月曜日まで</p>
+        <p>
+            <input style="width:250px; text-align:right" type="text" name="hour">時間
+            <input type="text" name="minute">分
+            <input type="text" name="sec">秒です。
+        </p>
+    </form>
+</body>
+</html>
