@@ -4,18 +4,24 @@
     <meta http-equiv="Content-Script-Type" content="text/javascript">
     <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <title>恐怖のマンデータイマー</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="月曜日になるまでの残り時間を計測する恐るべきタイマー。">
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="color:red; background-color:#000000; margin-left:40px">
-    <p style="font-size:36px; margin-top:50px;">月曜日まで</p>
-    <p>
-        <form name="clockForm">
-            <input style="width:250px; text-align:right" type="text" name="hour">時間
-            <input type="text" name="minute">分
-            <input type="text" name="sec">秒です。
-        </form>
-    </p>
+<body>
+    <p class="untilMonday">月曜日まで</p>
+    <form name="clockForm">
+        <p class="clock">
+            <input type="text" name="hour">
+            <div class="hms">時間</div>
+            <input type="text" name="minute">
+            <div class="hms">分</div>
+            <input type="text" name="sec">
+            <div class="hms">秒</div>
+            <div class="death">です。</div>
+        </p>
+    </form>
+
 
     <script type="text/javascript" src="consoleLog.js"></script>
     <script type="text/javascript" src="main.js"></script>

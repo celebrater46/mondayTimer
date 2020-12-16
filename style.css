@@ -1,12 +1,46 @@
 @charset "utf-8";
 
+html {
+    font-size: 7vw;
+}
+body {
+    color:red; 
+    background-color:#000000;
+    margin: 0 5vw;
+}
 input { 
-    width: 180px;
     color: #ff0000;
     background-color: #000000;
     border: 0px;
-    font-size: 150px;
+    font-size: 4rem;
 }
 p {
-    font-size: 36px;
+    font-size: 1rem;
+}
+form {
+    text-align: center;
+}
+p.clock {
+    display: flex;
+}
+form > input, form > div {
+    width: 90vw;
+    margin: 0 auto;
+    text-align: center;
+}
+div {
+    font-size: 1rem;
+}
+div.death {
+    margin-top: 20px;
+    text-align: right;
+}
+
+@media (min-width: 800px) {
+    html {
+        font-size: 3vw;
+    }
+    p.untilMonday {
+        margin-top: 1.5rem;
+    }
 }
