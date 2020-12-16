@@ -1,6 +1,11 @@
 // エラーログ用
 const nameOfComponent = "mondayTimer/index";
 
+// Form > input を取得
+const elH = document.clockForm.hour;
+const elM = document.clockForm.minute;
+const elS = document.clockForm.sec;
+
 // 現在時刻の取得
 const getCurrentTime = () => {
 	const now = new Date();
@@ -92,27 +97,28 @@ const MondayTimer = (props) => {
     );
 }
 
-const setTimer = (hms, els) => {
-    const elH = document.clockForm.hour;
-	const elM = document.clockForm.minute;
-    const elS = document.clockForm.sec;
-    elH.value = hour;
-    elM.value = min;
-    elS.value = sec;
+const setTimer = () => {
+    const hms = getRemain(getCurrentTime());
+    // const elH = document.clockForm.hour;
+	// const elM = document.clockForm.minute;
+    // const elS = document.clockForm.sec;
+    elH.value = hms.hour;
+    elM.value = hms.min;
+    elS.value = hms.sec;
     setTimeout(setTimer, 1000);
 }
 
-const init = () => {
-    const hms = getRemain(getCurrentTime());
+// const init = () => {
+    // const hms = getRemain(getCurrentTime());
 	// const elH = document.clockForm.hour;
 	// const elM = document.clockForm.minute;
     // const elS = document.clockForm.sec;
-    const els = {
-        hour: document.clockForm.hour,
-        min: document.clockForm.minute,
-        sec: document.clockForm.sec,
-    }
-	setTimer(hms, els);
-}
+    // const els = {
+    //     hour: document.clockForm.hour,
+    //     min: document.clockForm.minute,
+    //     sec: document.clockForm.sec,
+    // }
+	// setTimer(hms, els);
+// }
 
-window.onload = init();
+window.onload = setTimer();
