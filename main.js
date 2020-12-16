@@ -92,4 +92,27 @@ const MondayTimer = (props) => {
     );
 }
 
-export default MondayTimer;
+const setTimer = (hms, els) => {
+    const elH = document.clockForm.hour;
+	const elM = document.clockForm.minute;
+    const elS = document.clockForm.sec;
+    elH.value = hour;
+    elM.value = min;
+    elS.value = sec;
+    setTimeout(setTimer, 1000);
+}
+
+const init = () => {
+    const hms = getRemain(getCurrentTime());
+	// const elH = document.clockForm.hour;
+	// const elM = document.clockForm.minute;
+    // const elS = document.clockForm.sec;
+    const els = {
+        hour: document.clockForm.hour,
+        min: document.clockForm.minute,
+        sec: document.clockForm.sec,
+    }
+	setTimer(hms, els);
+}
+
+window.onload = init();
