@@ -20,9 +20,6 @@ p {
 form {
     text-align: center;
 }
-p.clock {
-    display: flex;
-}
 form > input, form > div {
     width: 90vw;
     margin: 0 auto;
@@ -40,7 +37,33 @@ div.death {
     html {
         font-size: 3vw;
     }
+    form {
+        display: flex;
+    }
     p.untilMonday {
         margin-top: 1.5rem;
+    }
+    form > input {
+        width: 15vw;
+        margin: 0;
+    }
+    div.hms {
+        width: auto;
+        font-size: 1rem;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    div.death {
+        width: 10vw;
+        text-align: left;
+        margin: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+    div.hms > div, div.death > div {
+        padding-bottom: 25px;
     }
 }
