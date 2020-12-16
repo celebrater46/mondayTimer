@@ -73,35 +73,8 @@ const calcRemain = (obj) => {
     return { hour: hour, min: min, sec: sec };
 }
 
-// const MondayTimer = (props) => {
-//     const [hms, setHms] = useState(getRemain(getCurrentTime()));
-//     useEffect(() => {
-//         const time = setInterval(() => {
-//             setHms(getRemain(getCurrentTime()));
-//         }, 1000);
-//         return () => clearInterval(time);
-//     }, []);
-
-//     return (
-//         <div className="container tool mondayTimer">
-//             <h1>月曜日まであと</h1>
-//             <h2>
-//                 <span className="time">{ hms.hour }</span>
-//                 <span className="words">時間</span>
-//                 <span className="time">{ hms.min }</span>
-//                 <span className="words">分</span>
-//                 <span className="time">{ hms.sec }</span>
-//                 <span className="words">秒です。</span>
-//             </h2>
-//         </div>
-//     );
-// }
-
 const setTimer = () => {
     const hms = getRemain(getCurrentTime());
-    // const elH = document.clockForm.hour;
-	// const elM = document.clockForm.minute;
-    // const elS = document.clockForm.sec;
     elH.value = hms.hour;
     elM.value = hms.min;
     elS.value = hms.sec;
@@ -109,18 +82,4 @@ const setTimer = () => {
     setTimeout(setTimer, 1000);
 }
 
-// const init = () => {
-    // const hms = getRemain(getCurrentTime());
-	// const elH = document.clockForm.hour;
-	// const elM = document.clockForm.minute;
-    // const elS = document.clockForm.sec;
-    // const els = {
-    //     hour: document.clockForm.hour,
-    //     min: document.clockForm.minute,
-    //     sec: document.clockForm.sec,
-    // }
-	// setTimer(hms, els);
-// }
-
 setTimer();
-// window.onload = setTimer();

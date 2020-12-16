@@ -15,5 +15,3 @@ const consoleLog = (vars, names, fn, file, isError) => {
         console.log(file);
     }
 }
-
-// export default errorLog;
