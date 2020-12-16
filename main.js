@@ -73,29 +73,29 @@ const calcRemain = (obj) => {
     return { hour: hour, min: min, sec: sec };
 }
 
-const MondayTimer = (props) => {
-    const [hms, setHms] = useState(getRemain(getCurrentTime()));
-    useEffect(() => {
-        const time = setInterval(() => {
-            setHms(getRemain(getCurrentTime()));
-        }, 1000);
-        return () => clearInterval(time);
-    }, []);
+// const MondayTimer = (props) => {
+//     const [hms, setHms] = useState(getRemain(getCurrentTime()));
+//     useEffect(() => {
+//         const time = setInterval(() => {
+//             setHms(getRemain(getCurrentTime()));
+//         }, 1000);
+//         return () => clearInterval(time);
+//     }, []);
 
-    return (
-        <div className="container tool mondayTimer">
-            <h1>月曜日まであと</h1>
-            <h2>
-                <span className="time">{ hms.hour }</span>
-                <span className="words">時間</span>
-                <span className="time">{ hms.min }</span>
-                <span className="words">分</span>
-                <span className="time">{ hms.sec }</span>
-                <span className="words">秒です。</span>
-            </h2>
-        </div>
-    );
-}
+//     return (
+//         <div className="container tool mondayTimer">
+//             <h1>月曜日まであと</h1>
+//             <h2>
+//                 <span className="time">{ hms.hour }</span>
+//                 <span className="words">時間</span>
+//                 <span className="time">{ hms.min }</span>
+//                 <span className="words">分</span>
+//                 <span className="time">{ hms.sec }</span>
+//                 <span className="words">秒です。</span>
+//             </h2>
+//         </div>
+//     );
+// }
 
 const setTimer = () => {
     const hms = getRemain(getCurrentTime());
@@ -105,6 +105,7 @@ const setTimer = () => {
     elH.value = hms.hour;
     elM.value = hms.min;
     elS.value = hms.sec;
+    consoleLog([hms.hour, hms.min, hms.sec], "hms.hour, hms.min, hms.sec", "setTimer", nameOfComponent, true);
     setTimeout(setTimer, 1000);
 }
 
@@ -121,4 +122,5 @@ const setTimer = () => {
 	// setTimer(hms, els);
 // }
 
-window.onload = setTimer();
+setTimer();
+// window.onload = setTimer();
